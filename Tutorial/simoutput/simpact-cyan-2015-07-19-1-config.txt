@@ -1,0 +1,726 @@
+# Some variables. Note that if set, environment variables will have
+# Precedence.
+$SIMPACT_OUTPUT_PREFIX = simpact-cyan-2015-07-19-1-
+$SIMPACT_DATA_DIR = /Applications/SimpactCyan.app/Contents/data/
+
+# The configuration file format is quite straightforward, it is just a set of
+# 'key = value' lines. Lines that start with '#' are treated as comments and
+# are ignored.
+#
+# If the key starts with a dollar ('$') sign, the rest of the key is 
+# considered to be the name of a variable, which may be used later on in the
+# file. To use such a variable in a specified value, you need to surround
+# the variable name with '${' and '}'. For example, one could write:
+#
+#     $PREFIX = MyCustomPrefix
+#     logsystem.outfile.logevents = ${PREFIX}-output.log
+#
+# and the file used will have the name 'MyCustomPrefix-output.log'.
+#
+# In the same way, environment variables can be used, and, in fact, 
+# environment variables will take precedence over these internal variables.
+# This way, it is easy to change the content of these variables on the command
+# line
+#
+# Note that no calculations can be performed in this file anymore, so instead
+# of writing 1.0/2.0, you'd need to write 0.5 for example.
+
+# The following depends on birth.pregnancyduration.dist.type = beta
+# birth.pregnancyduration.dist.beta.a
+# birth.pregnancyduration.dist.beta.b
+# birth.pregnancyduration.dist.beta.min
+# birth.pregnancyduration.dist.beta.max
+#
+# The following depends on birth.pregnancyduration.dist.type = exponential
+# birth.pregnancyduration.dist.exponential.lambda
+#
+# The following depends on birth.pregnancyduration.dist.type = gamma
+# birth.pregnancyduration.dist.gamma.a
+# birth.pregnancyduration.dist.gamma.b
+#
+# The following depends on birth.pregnancyduration.dist.type = lognormal
+# birth.pregnancyduration.dist.lognormal.zeta
+# birth.pregnancyduration.dist.lognormal.sigma
+#
+# The following depends on birth.pregnancyduration.dist.type = normal
+# birth.pregnancyduration.dist.normal.mu
+# birth.pregnancyduration.dist.normal.sigma
+# birth.pregnancyduration.dist.normal.min
+# birth.pregnancyduration.dist.normal.max
+#
+# The following depends on birth.pregnancyduration.dist.type = uniform
+# birth.pregnancyduration.dist.uniform.min
+# birth.pregnancyduration.dist.uniform.max
+#
+# The following depends on conception.wsf.dist.type = beta
+# conception.wsf.dist.beta.a
+# conception.wsf.dist.beta.b
+# conception.wsf.dist.beta.min
+# conception.wsf.dist.beta.max
+#
+# The following depends on conception.wsf.dist.type = exponential
+# conception.wsf.dist.exponential.lambda
+#
+# The following depends on conception.wsf.dist.type = gamma
+# conception.wsf.dist.gamma.a
+# conception.wsf.dist.gamma.b
+#
+# The following depends on conception.wsf.dist.type = lognormal
+# conception.wsf.dist.lognormal.zeta
+# conception.wsf.dist.lognormal.sigma
+#
+# The following depends on conception.wsf.dist.type = normal
+# conception.wsf.dist.normal.mu
+# conception.wsf.dist.normal.sigma
+# conception.wsf.dist.normal.min
+# conception.wsf.dist.normal.max
+#
+# The following depends on conception.wsf.dist.type = uniform
+# conception.wsf.dist.uniform.min
+# conception.wsf.dist.uniform.max
+#
+# The following depends on dropout.interval.dist.type = beta
+# dropout.interval.dist.beta.a
+# dropout.interval.dist.beta.b
+# dropout.interval.dist.beta.min
+# dropout.interval.dist.beta.max
+#
+# The following depends on dropout.interval.dist.type = exponential
+# dropout.interval.dist.exponential.lambda
+#
+# The following depends on dropout.interval.dist.type = fixed
+# dropout.interval.dist.fixed.value
+#
+# The following depends on dropout.interval.dist.type = gamma
+# dropout.interval.dist.gamma.a
+# dropout.interval.dist.gamma.b
+#
+# The following depends on dropout.interval.dist.type = lognormal
+# dropout.interval.dist.lognormal.zeta
+# dropout.interval.dist.lognormal.sigma
+#
+# The following depends on dropout.interval.dist.type = normal
+# dropout.interval.dist.normal.mu
+# dropout.interval.dist.normal.sigma
+# dropout.interval.dist.normal.min
+# dropout.interval.dist.normal.max
+#
+# The following depends on formation.hazard.type = simple
+# formation.hazard.simple.alpha_0
+# formation.hazard.simple.alpha_1
+# formation.hazard.simple.alpha_2
+# formation.hazard.simple.alpha_3
+# formation.hazard.simple.alpha_4
+# formation.hazard.simple.alpha_5
+# formation.hazard.simple.alpha_6
+# formation.hazard.simple.alpha_7
+# formation.hazard.simple.Dp
+# formation.hazard.simple.beta
+# formation.hazard.simple.t_max
+#
+# The following depends on intervention.enabled = yes
+# intervention.baseconfigname
+# intervention.times
+# intervention.fileids
+#
+# The following depends on hivseed.type = amount
+# hivseed.amount
+# hivseed.stop.short
+#
+# The following depends on person.art.accept.threshold.dist.type = beta
+# person.art.accept.threshold.dist.beta.a
+# person.art.accept.threshold.dist.beta.b
+# person.art.accept.threshold.dist.beta.min
+# person.art.accept.threshold.dist.beta.max
+#
+# The following depends on person.art.accept.threshold.dist.type = exponential
+# person.art.accept.threshold.dist.exponential.lambda
+#
+# The following depends on person.art.accept.threshold.dist.type = gamma
+# person.art.accept.threshold.dist.gamma.a
+# person.art.accept.threshold.dist.gamma.b
+#
+# The following depends on person.art.accept.threshold.dist.type = lognormal
+# person.art.accept.threshold.dist.lognormal.zeta
+# person.art.accept.threshold.dist.lognormal.sigma
+#
+# The following depends on person.art.accept.threshold.dist.type = normal
+# person.art.accept.threshold.dist.normal.mu
+# person.art.accept.threshold.dist.normal.sigma
+# person.art.accept.threshold.dist.normal.min
+# person.art.accept.threshold.dist.normal.max
+#
+# The following depends on person.art.accept.threshold.dist.type = uniform
+# person.art.accept.threshold.dist.uniform.min
+# person.art.accept.threshold.dist.uniform.max
+#
+# The following depends on person.agegap.man.dist.type = beta
+# person.agegap.man.dist.beta.a
+# person.agegap.man.dist.beta.b
+# person.agegap.man.dist.beta.min
+# person.agegap.man.dist.beta.max
+#
+# The following depends on person.agegap.man.dist.type = exponential
+# person.agegap.man.dist.exponential.lambda
+#
+# The following depends on person.agegap.man.dist.type = gamma
+# person.agegap.man.dist.gamma.a
+# person.agegap.man.dist.gamma.b
+#
+# The following depends on person.agegap.man.dist.type = lognormal
+# person.agegap.man.dist.lognormal.zeta
+# person.agegap.man.dist.lognormal.sigma
+#
+# The following depends on person.agegap.man.dist.type = normal
+# person.agegap.man.dist.normal.mu
+# person.agegap.man.dist.normal.sigma
+# person.agegap.man.dist.normal.min
+# person.agegap.man.dist.normal.max
+#
+# The following depends on person.agegap.man.dist.type = uniform
+# person.agegap.man.dist.uniform.min
+# person.agegap.man.dist.uniform.max
+#
+# The following depends on person.agegap.woman.dist.type = beta
+# person.agegap.woman.dist.beta.a
+# person.agegap.woman.dist.beta.b
+# person.agegap.woman.dist.beta.min
+# person.agegap.woman.dist.beta.max
+#
+# The following depends on person.agegap.woman.dist.type = exponential
+# person.agegap.woman.dist.exponential.lambda
+#
+# The following depends on person.agegap.woman.dist.type = gamma
+# person.agegap.woman.dist.gamma.a
+# person.agegap.woman.dist.gamma.b
+#
+# The following depends on person.agegap.woman.dist.type = lognormal
+# person.agegap.woman.dist.lognormal.zeta
+# person.agegap.woman.dist.lognormal.sigma
+#
+# The following depends on person.agegap.woman.dist.type = normal
+# person.agegap.woman.dist.normal.mu
+# person.agegap.woman.dist.normal.sigma
+# person.agegap.woman.dist.normal.min
+# person.agegap.woman.dist.normal.max
+#
+# The following depends on person.agegap.woman.dist.type = uniform
+# person.agegap.woman.dist.uniform.min
+# person.agegap.woman.dist.uniform.max
+#
+# The following depends on person.cd4.start.dist.type = beta
+# person.cd4.start.dist.beta.a
+# person.cd4.start.dist.beta.b
+# person.cd4.start.dist.beta.min
+# person.cd4.start.dist.beta.max
+#
+# The following depends on person.cd4.start.dist.type = exponential
+# person.cd4.start.dist.exponential.lambda
+#
+# The following depends on person.cd4.start.dist.type = fixed
+# person.cd4.start.dist.fixed.value
+#
+# The following depends on person.cd4.start.dist.type = gamma
+# person.cd4.start.dist.gamma.a
+# person.cd4.start.dist.gamma.b
+#
+# The following depends on person.cd4.start.dist.type = lognormal
+# person.cd4.start.dist.lognormal.zeta
+# person.cd4.start.dist.lognormal.sigma
+#
+# The following depends on person.cd4.start.dist.type = normal
+# person.cd4.start.dist.normal.mu
+# person.cd4.start.dist.normal.sigma
+# person.cd4.start.dist.normal.min
+# person.cd4.start.dist.normal.max
+#
+# The following depends on person.cd4.end.dist.type = beta
+# person.cd4.end.dist.beta.a
+# person.cd4.end.dist.beta.b
+# person.cd4.end.dist.beta.min
+# person.cd4.end.dist.beta.max
+#
+# The following depends on person.cd4.end.dist.type = exponential
+# person.cd4.end.dist.exponential.lambda
+#
+# The following depends on person.cd4.end.dist.type = fixed
+# person.cd4.end.dist.fixed.value
+#
+# The following depends on person.cd4.end.dist.type = gamma
+# person.cd4.end.dist.gamma.a
+# person.cd4.end.dist.gamma.b
+#
+# The following depends on person.cd4.end.dist.type = lognormal
+# person.cd4.end.dist.lognormal.zeta
+# person.cd4.end.dist.lognormal.sigma
+#
+# The following depends on person.cd4.end.dist.type = normal
+# person.cd4.end.dist.normal.mu
+# person.cd4.end.dist.normal.sigma
+# person.cd4.end.dist.normal.min
+# person.cd4.end.dist.normal.max
+#
+# The following depends on person.eagerness.dist.type = beta
+# person.eagerness.dist.beta.a
+# person.eagerness.dist.beta.b
+# person.eagerness.dist.beta.min
+# person.eagerness.dist.beta.max
+#
+# The following depends on person.eagerness.dist.type = exponential
+# person.eagerness.dist.exponential.lambda
+#
+# The following depends on person.eagerness.dist.type = gamma
+# person.eagerness.dist.gamma.a
+# person.eagerness.dist.gamma.b
+#
+# The following depends on person.eagerness.dist.type = lognormal
+# person.eagerness.dist.lognormal.zeta
+# person.eagerness.dist.lognormal.sigma
+#
+# The following depends on person.eagerness.dist.type = normal
+# person.eagerness.dist.normal.mu
+# person.eagerness.dist.normal.sigma
+# person.eagerness.dist.normal.min
+# person.eagerness.dist.normal.max
+#
+# The following depends on person.eagerness.dist.type = uniform
+# person.eagerness.dist.uniform.min
+# person.eagerness.dist.uniform.max
+#
+# The following depends on person.geo.dist2d.type = binormal
+# person.geo.dist2d.binormal.meanx
+# person.geo.dist2d.binormal.meany
+# person.geo.dist2d.binormal.sigmax
+# person.geo.dist2d.binormal.sigmay
+# person.geo.dist2d.binormal.rho
+# person.geo.dist2d.binormal.minx
+# person.geo.dist2d.binormal.maxx
+# person.geo.dist2d.binormal.miny
+# person.geo.dist2d.binormal.maxy
+#
+# The following depends on person.geo.dist2d.type = binormalsymm
+# person.geo.dist2d.binormalsymm.mean
+# person.geo.dist2d.binormalsymm.sigma
+# person.geo.dist2d.binormalsymm.rho
+# person.geo.dist2d.binormalsymm.min
+# person.geo.dist2d.binormalsymm.max
+#
+# The following depends on person.geo.dist2d.type = discrete
+# person.geo.dist2d.discrete.densfile
+# person.geo.dist2d.discrete.maskfile
+# person.geo.dist2d.discrete.xoffset
+# person.geo.dist2d.discrete.yoffset
+# person.geo.dist2d.discrete.width
+# person.geo.dist2d.discrete.height
+# person.geo.dist2d.discrete.flipy
+#
+# The following depends on person.geo.dist2d.type = uniform
+# person.geo.dist2d.uniform.xmin
+# person.geo.dist2d.uniform.xmax
+# person.geo.dist2d.uniform.ymin
+# person.geo.dist2d.uniform.ymax
+#
+# The following depends on person.vsp.model.logdist2d.dist2d.type = binormal
+# person.vsp.model.logdist2d.dist2d.binormal.meanx
+# person.vsp.model.logdist2d.dist2d.binormal.meany
+# person.vsp.model.logdist2d.dist2d.binormal.sigmax
+# person.vsp.model.logdist2d.dist2d.binormal.sigmay
+# person.vsp.model.logdist2d.dist2d.binormal.rho
+# person.vsp.model.logdist2d.dist2d.binormal.minx
+# person.vsp.model.logdist2d.dist2d.binormal.maxx
+# person.vsp.model.logdist2d.dist2d.binormal.miny
+# person.vsp.model.logdist2d.dist2d.binormal.maxy
+#
+# The following depends on person.vsp.model.logdist2d.dist2d.type = discrete
+# person.vsp.model.logdist2d.dist2d.discrete.densfile
+# person.vsp.model.logdist2d.dist2d.discrete.maskfile
+# person.vsp.model.logdist2d.dist2d.discrete.xoffset
+# person.vsp.model.logdist2d.dist2d.discrete.yoffset
+# person.vsp.model.logdist2d.dist2d.discrete.width
+# person.vsp.model.logdist2d.dist2d.discrete.height
+# person.vsp.model.logdist2d.dist2d.discrete.flipy
+#
+# The following depends on person.vsp.model.logdist2d.dist2d.type = fixed
+# person.vsp.model.logdist2d.dist2d.fixed.xvalue
+# person.vsp.model.logdist2d.dist2d.fixed.yvalue
+#
+# The following depends on person.vsp.model.logdist2d.dist2d.type = uniform
+# person.vsp.model.logdist2d.dist2d.uniform.xmin
+# person.vsp.model.logdist2d.dist2d.uniform.xmax
+# person.vsp.model.logdist2d.dist2d.uniform.ymin
+# person.vsp.model.logdist2d.dist2d.uniform.ymax
+#
+# The following depends on person.vsp.model.logdist2d.usealternativeseeddist = yes
+# person.vsp.model.logdist2d.alternativeseed.dist.type
+#
+# The following depends on person.vsp.model.logdist2d.alternativeseed.dist.type = beta
+# person.vsp.model.logdist2d.alternativeseed.dist.beta.a
+# person.vsp.model.logdist2d.alternativeseed.dist.beta.b
+# person.vsp.model.logdist2d.alternativeseed.dist.beta.min
+# person.vsp.model.logdist2d.alternativeseed.dist.beta.max
+#
+# The following depends on person.vsp.model.logdist2d.alternativeseed.dist.type = exponential
+# person.vsp.model.logdist2d.alternativeseed.dist.exponential.lambda
+#
+# The following depends on person.vsp.model.logdist2d.alternativeseed.dist.type = fixed
+# person.vsp.model.logdist2d.alternativeseed.dist.fixed.value
+#
+# The following depends on person.vsp.model.logdist2d.alternativeseed.dist.type = gamma
+# person.vsp.model.logdist2d.alternativeseed.dist.gamma.a
+# person.vsp.model.logdist2d.alternativeseed.dist.gamma.b
+#
+# The following depends on person.vsp.model.logdist2d.alternativeseed.dist.type = lognormal
+# person.vsp.model.logdist2d.alternativeseed.dist.lognormal.zeta
+# person.vsp.model.logdist2d.alternativeseed.dist.lognormal.sigma
+#
+# The following depends on person.vsp.model.logdist2d.alternativeseed.dist.type = normal
+# person.vsp.model.logdist2d.alternativeseed.dist.normal.mu
+# person.vsp.model.logdist2d.alternativeseed.dist.normal.sigma
+# person.vsp.model.logdist2d.alternativeseed.dist.normal.min
+# person.vsp.model.logdist2d.alternativeseed.dist.normal.max
+#
+# The following depends on person.vsp.model.logdist2d.alternativeseed.dist.type = uniform
+# person.vsp.model.logdist2d.alternativeseed.dist.uniform.min
+# person.vsp.model.logdist2d.alternativeseed.dist.uniform.max
+#
+# The following depends on person.vsp.model.type = logweibullwithnoise
+# person.vsp.model.logweibullwithnoise.weibullscale
+# person.vsp.model.logweibullwithnoise.weibullshape
+# person.vsp.model.logweibullwithnoise.fracsigma
+# person.vsp.model.logweibullwithnoise.onnegative
+#
+
+# Indicates the time interval before death that the AIDS stages occur
+# The defaults are 15 and 6 months before death
+aidsstage.start                                              = 1.25
+aidsstage.final                                              = 0.5
+
+# When someone is born, a random number is chosen from [0,1],
+# and if smaller than this boygirlratio, the new child is male. Otherwise, a 
+# woman is added to the population.
+# 
+# Default is 1.0/2.01
+birth.boygirlratio                                           = 0.497512437810945
+
+# This parameter is used to specify the pregnancy duration. The default
+# is the fixed value of 268/365
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+birth.pregnancyduration.dist.type                            = fixed
+
+# The following depends on birth.pregnancyduration.dist.type = fixed
+# Each time a value is picked from this 'distribution', the specified fixed 
+# value is returned.
+birth.pregnancyduration.dist.fixed.value                     = 0.734246575342466
+
+# Duration of the acute stage. 3 months = 3/12 = 0.25
+chronicstage.acutestagetime                                  = 0.25
+
+# Parameters for the conception event. Hazard is 
+#     h = exp(alpha_base + alpha_ageman * AgeMan(t) + alpha_agewoman * AgeWoman(t) 
+#             + alpha_wsf * WSF + beta*(t-t_ref) )
+# 
+# Here, WSF is a number that's generated at random from the specified distribution
+# when a conception event is scheduled.
+conception.alpha_base                                        = -3
+conception.alpha_ageman                                      = 0
+conception.alpha_agewoman                                    = 0
+conception.alpha_wsf                                         = 0
+conception.beta                                              = 0
+conception.t_max                                             = 200
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+conception.wsf.dist.type                                     = fixed
+
+# The following depends on conception.wsf.dist.type = fixed
+# Each time a value is picked from this 'distribution', the specified fixed 
+# value is returned.
+conception.wsf.dist.fixed.value                              = 0
+
+# Age at which a person becomes sexually active and can form
+# relationships
+debut.debutage                                               = 15
+
+# When a person gets infected or drops out of treatment, a diagnosis event is 
+# scheduled of which the fire time is determined by the following hazard:
+# 
+#  h = exp(baseline + agefactor*A(t) + genderfactor*G 
+#          + diagpartnersfactor*ND + isdiagnosedfactor*D
+#          + beta*t)
+# 
+# Here, A(t) is the age of the person, G is the gender (0 for a man, 1 for a
+# woman), ND is the number of diagnosed partners and D is a flag (0 or 1)
+# indicating if the person has been on treatment before (to have different
+# behaviour for first diagnosis and re-testing after dropout).
+diagnosis.baseline                                           = 0
+diagnosis.agefactor                                          = 0
+diagnosis.genderfactor                                       = 0
+diagnosis.diagpartnersfactor                                 = 0
+diagnosis.isdiagnosedfactor                                  = 0
+diagnosis.beta                                               = 0
+diagnosis.t_max                                              = 200
+
+# These are the parameters for the hazard in the dissolution event.
+# see http://research.edm.uhasselt.be/~jori/simpact/documentation/simpactcyan.html
+# for more information.
+dissolution.alpha_0                                          = 0.1
+dissolution.alpha_1                                          = 0
+dissolution.alpha_2                                          = 0
+dissolution.alpha_3                                          = 0
+dissolution.alpha_4                                          = 0
+dissolution.alpha_5                                          = 0
+dissolution.Dp                                               = 0
+dissolution.beta                                             = 0
+dissolution.t_max                                            = 200
+
+# Distribution to schedule dropout events.
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+dropout.interval.dist.type                                   = uniform
+
+# The following depends on dropout.interval.dist.type = uniform
+# Parameters for a uniform distribution
+dropout.interval.dist.uniform.min                            = 0.25
+dropout.interval.dist.uniform.max                            = 10
+
+# Valid values are: ['simple', 'agegap']
+formation.hazard.type                                        = agegap
+
+# The following depends on formation.hazard.type = agegap
+# These are the parameters for the hazard in the 'agegap' formation event.
+# see http://research.edm.uhasselt.be/~jori/simpact/documentation/simpactcyan.html
+# for more information.
+formation.hazard.agegap.baseline                             = 0.1
+formation.hazard.agegap.numrel_man                           = 0
+formation.hazard.agegap.numrel_woman                         = 0
+formation.hazard.agegap.numrel_diff                          = 0
+formation.hazard.agegap.meanage                              = 0
+formation.hazard.agegap.eagerness_sum                        = 0
+formation.hazard.agegap.eagerness_diff                       = 0
+formation.hazard.agegap.gap_factor_man                       = 0
+formation.hazard.agegap.gap_agescale_man                     = 0
+formation.hazard.agegap.gap_factor_woman                     = 0
+formation.hazard.agegap.gap_agescale_woman                   = 0
+formation.hazard.agegap.beta                                 = 0
+formation.hazard.agegap.t_max                                = 200
+
+# If you enable the intervention event, you need to specify a number of times
+# at which this event should fire. On these times, some new configuration lines
+# will be read, overriding the initial parameters read from config file.
+# Valid values are: ['yes', 'no']
+intervention.enabled                                         = no
+
+# When a person is diagnosed (or 're-diagnosed' after a dropout), monitoring
+# events will be scheduled using an interval that depends on the CD4 count.
+# When such an event fires, and the person's CD4 count is below the specified
+# CD4 threshold, the person may start ART treatment, if he/she is willing
+# to do so (see person settings). 
+# 
+# If the person is treated, the SPVL will be lowered in such a way that on a 
+# logarithmic scale the new value equals the specified fraction of the original
+# viral load.
+monitoring.cd4.threshold                                     = 350
+monitoring.fraction.log_viralload                            = 0.7
+
+# These parameters specify the interval with which monitoring events will take
+# place. This is determined by a piecewise linear function, which is a function
+# of the person's CD4 count and which will return the interval (the unit is one
+# year).
+# 
+# The 'monitoring.interval.piecewise.cd4s' specify the x-values of this 
+# piecewise linear function (comma separated list), while 
+# 'monitoring.interval.piecewise.times' specified the corresponding y-values. 
+# For an x-value (CD4 count) that's smaller than the smallest value in the list,
+# the value in 'monitoring.interval.piecewise.left' will be returned. For an
+# x-value that's larger than the largest value in the list, the value in
+# 'monitoring.interval.piecewise.right' will be returned.
+monitoring.interval.piecewise.cd4s                           = 200,350
+monitoring.interval.piecewise.times                          = 0.25,0.25
+monitoring.interval.piecewise.left                           = 0.16666
+monitoring.interval.piecewise.right                          = 0.5
+
+# Parameters for the calculation of the survival time from the
+# set-point viral load: t_surv = C/Vsp^(-k)
+mortality.aids.survtime.C                                    = 1325
+mortality.aids.survtime.k                                    = -0.49
+
+# Parameters for the weibull distribution from which a non-aids
+# time of death is picked.
+mortality.normal.weibull.shape                               = 4
+mortality.normal.weibull.scale                               = 70
+mortality.normal.weibull.genderdiff                          = 5
+
+# During the simulation, at regular time intervals certain extra information
+# can be logged with this event. Set the interval value to positive to enable,
+# otherwise it will be disabled.
+periodiclogging.interval                                     = -1
+periodiclogging.outfile.logperiodic                          = ${SIMPACT_OUTPUT_PREFIX}periodiclog.csv
+
+# Controls when the initial HIV seeders are introduced, and who those seeders
+# are. First, the possible seeders are chosen from the population, based on the
+# specified mininum and maximum ages.
+# 
+# The specified time says when the seeding event should take place. Note that
+# if the time is negative, no seeders will be introduced since the event will 
+# be ignored (simulation time starts at t = 0).
+hivseed.time                                                 = 0
+# Valid values are: ['fraction', 'amount']
+hivseed.type                                                 = fraction
+hivseed.age.min                                              = 0
+hivseed.age.max                                              = 1000
+
+# The following depends on hivseed.type = fraction
+# From the people who possibly can be seeded with HIV, the specified fraction
+# will be marked as infected.
+hivseed.fraction                                             = 0.2
+
+# Some events (e.g. a relationship formation event) use the last known 
+# population size to normalize a hazard. By default, the population size 
+# at the start of the simulation is used for this, which is fine if the 
+# population size remains roughly constant. For rapidly growing or 
+# shrinking populations, this is not correct however.
+# 
+# By setting this interval to a positive number, the last known population
+# size will be recalculated periodically. Note that this will also cause all
+# event times in the simulation to be recalculated, so settings this to a low
+# value can certainly slow things down.
+syncpopstats.interval                                        = -1
+
+# The hazard of transmission is h = exp(a + b * V^(-c) + d1*Pi + d2*Pj), 
+# where V can be either the set-point viral load or the acute stage 
+# viral load. 
+# 
+# Default parameters originate from a fit to the Lingappa et al. data.
+transmission.param.a                                         = -1.3997
+transmission.param.b                                         = -12.022
+transmission.param.c                                         = 0.1649
+transmission.param.d1                                        = 0
+transmission.param.d2                                        = 0
+
+logsystem.outfile.logevents                                  = ${SIMPACT_OUTPUT_PREFIX}eventlog.csv
+logsystem.outfile.logpersons                                 = ${SIMPACT_OUTPUT_PREFIX}personlog.csv
+logsystem.outfile.logrelations                               = ${SIMPACT_OUTPUT_PREFIX}relationlog.csv
+logsystem.outfile.logtreatments                              = ${SIMPACT_OUTPUT_PREFIX}treatmentlog.csv
+
+# This parameter specifies a distribution from which a number will be chosen
+# for each person, and which serves as the threshold to start ART (if eligible).
+# When eligible for treatment, a random number will be chosen uniformly from
+# [0,1], and treatment will only be started if this number is smaller than the
+# threshold. By default, everyone will just have a 50/50 chance of starting
+# treatment when possible. 
+# 
+# If this distribution returns a low value (close to zero), it means that 
+# there's little chance of accepting treatment; if the value is higher (close to
+# one), treatment will almost always be accepted.
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+person.art.accept.threshold.dist.type                        = fixed
+
+# The following depends on person.art.accept.threshold.dist.type = fixed
+# Each time a value is picked from this 'distribution', the specified fixed 
+# value is returned.
+person.art.accept.threshold.dist.fixed.value                 = 0.5
+
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+person.agegap.man.dist.type                                  = fixed
+
+# The following depends on person.agegap.man.dist.type = fixed
+# Each time a value is picked from this 'distribution', the specified fixed 
+# value is returned.
+person.agegap.man.dist.fixed.value                           = 0
+
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+person.agegap.woman.dist.type                                = fixed
+
+# The following depends on person.agegap.woman.dist.type = fixed
+# Each time a value is picked from this 'distribution', the specified fixed 
+# value is returned.
+person.agegap.woman.dist.fixed.value                         = 0
+
+# These distributions control the initial CD4 count when first getting infected
+# and the final CD4 count at the time the person dies from AIDS.
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+person.cd4.start.dist.type                                   = uniform
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+person.cd4.end.dist.type                                     = uniform
+
+# The following depends on person.cd4.start.dist.type = uniform
+# Parameters for a uniform distribution
+person.cd4.start.dist.uniform.min                            = 700
+person.cd4.start.dist.uniform.max                            = 1300
+
+# The following depends on person.cd4.end.dist.type = uniform
+# Parameters for a uniform distribution
+person.cd4.end.dist.uniform.min                              = 0
+person.cd4.end.dist.uniform.max                              = 100
+
+# The per-person parameter for the eagerness to form a relationship is chosen
+# from a specific distribution with certain parameters.
+# Valid values are: ['lognormal', 'exponential', 'normal', 'uniform', 'beta', 'fixed', 'gamma']
+person.eagerness.dist.type                                   = fixed
+
+# The following depends on person.eagerness.dist.type = fixed
+# Each time a value is picked from this 'distribution', the specified fixed 
+# value is returned.
+person.eagerness.dist.fixed.value                            = 0
+
+# The distribution specified by 'person.geo.dist2d' is used to assign (x,y)
+# location coordinates to a person.
+# Valid values are: ['binormalsymm', 'discrete', 'fixed', 'binormal', 'uniform']
+person.geo.dist2d.type                                       = fixed
+
+# The following depends on person.geo.dist2d.type = fixed
+# Each time a value from this 'distribution' is picked, the specified x- and
+# y- values will be returned.
+person.geo.dist2d.fixed.xvalue                               = 0
+person.geo.dist2d.fixed.yvalue                               = 0
+
+# The viral load during the other stages is based on the set point viral load:
+#    V = [ max(ln(x)/b + Vsp^(-c), maxvalue^(-c)) ]^(-1/c)
+# The b and c parameters are specified in the parameters from the transmission
+# event.
+person.vsp.toacute.x                                         = 10
+person.vsp.toaids.x                                          = 7
+person.vsp.tofinalaids.x                                     = 12
+person.vsp.maxvalue                                          = 1000000000
+
+# The type of model to use for the Vsp value of the seeders and for inheriting
+# Vsp values.
+# Valid values are: ['logweibullwithnoise', 'logdist2d']
+person.vsp.model.type                                        = logdist2d
+
+# The following depends on person.vsp.model.type = logdist2d
+# Both the initial 'seed' value and the inherited Vsp value are
+# chosen so that the log value is based on the specified 2D distribution.
+# 
+# Additionally, you can also specify that an alternative distribution must
+# be used to pick the Vsp values of the seeders.
+# Valid values are: ['binormalsymm', 'discrete', 'fixed', 'binormal', 'uniform']
+person.vsp.model.logdist2d.dist2d.type                       = binormalsymm
+# Valid values are: ['yes', 'no']
+person.vsp.model.logdist2d.usealternativeseeddist            = no
+
+# The following depends on person.vsp.model.logdist2d.dist2d.type = binormalsymm
+# Parameters for a symmetric clipped binormal distribution, based on
+# prob(x,y) = 1.0/(2.0*pi*sigma^2*sqrt(1.0-rho^2))
+#           * exp[-(x^2 + y^2 - 2.0*rho*x*y)/(2.0*sigma^2*(1.0-rho^2))]
+# Clipping to the specified region is done using rejection sampling
+person.vsp.model.logdist2d.dist2d.binormalsymm.mean          = 4
+person.vsp.model.logdist2d.dist2d.binormalsymm.sigma         = 1
+person.vsp.model.logdist2d.dist2d.binormalsymm.rho           = 0.33
+person.vsp.model.logdist2d.dist2d.binormalsymm.min           = 1
+person.vsp.model.logdist2d.dist2d.binormalsymm.max           = 8
+
+# By default, the 'maxevents' parameter is negative, causing it to be
+# ignored. Set this to a positive value to make sure the simulation stops
+# when this number of events has been exceeded.
+population.nummen                                            = 100
+population.numwomen                                          = 100
+population.simtime                                           = 15
+population.maxevents                                         = -1
+population.agedistfile                                       = ${SIMPACT_DATA_DIR}sa_2003.csv
+
+# If set to 1, formation events will be scheduled for all man,woman
+# pairs (who are both sexually active). This is the default behaviour.
+# If set to a smaller number, only a fraction of the formation events 
+# that would otherwise be scheduled are now used. This fraction is not 
+# only used in the initial scheduling of formation events, but also 
+# when a debut event fires, to limit the newly scheduled formation events.
+population.eyecap.fraction                                   = 1
+

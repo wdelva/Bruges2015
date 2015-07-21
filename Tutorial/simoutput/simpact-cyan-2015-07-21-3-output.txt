@@ -1,0 +1,9 @@
+# read seed from /dev/urandom
+# Using seed 1234
+# Performing extra check on read configuration parameters
+# WARNING: ignoring consistency check for config key population.agedistfile (config value is '/Applications/SimpactCyan.app/Contents/data/sa_2003.csv')
+# mNRM: using advanced algorithm
+# Release version
+# Simpact version is: 0.18.0
+# Number of events executed is 4205
+# Started with 1000 people, ending with 997 (difference is -3)

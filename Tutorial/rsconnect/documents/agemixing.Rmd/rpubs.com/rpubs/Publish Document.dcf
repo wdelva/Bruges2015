@@ -1,0 +1,7 @@
+name: Publish Document
+account: rpubs
+server: rpubs.com
+bundleId:
+        https://api.rpubs.com/api/v1/document/93073/fcf4b1a0f68245eba7f43971114c9188
+url: http://rpubs.com/wdelva/93073
+when: 1437513883.14483
